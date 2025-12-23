@@ -1,0 +1,82 @@
+{
+  "name": "n8n-nodes-plaid",
+  "version": "3.0.0",
+  "description": "n8n community node for Plaid - Banking API integration with Transfer API support for ACH, RTP, and wire transfers",
+  "keywords": [
+    "n8n-community-node-package",
+    "plaid",
+    "banking",
+    "ach",
+    "transfer",
+    "payments",
+    "rtp",
+    "wire",
+    "fintech",
+    "financial-data"
+  ],
+  "license": "BUSL-1.1",
+  "homepage": "https://velobpa.com",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-plaid.git"
+  },
+  "engines": {
+    "node": ">=18.10",
+    "pnpm": ">=9.1"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "pnpm build",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "COMMERCIAL_LICENSE.md",
+    "README_LICENSING.md",
+    "LICENSING_FAQ.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/PlaidApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Plaid/Plaid.node.js",
+      "dist/nodes/Plaid/PlaidTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "~5.4.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

@@ -1,0 +1,24 @@
+# Source files (publish compiled only)
+nodes/
+credentials/
+index.ts
+tsconfig.json
+gulpfile.js
+jest.config.js
+.eslintrc.js
+.prettierrc
+
+# Test files
+test/
+coverage/
+
+# Development
+.gitignore
+.github/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
